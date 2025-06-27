@@ -13,16 +13,19 @@ Welcome to the comprehensive knowledge base for **Heaton Moor Golf Club**, estab
 - [[#🏠 Facilities|Facilities]] - Clubhouse and amenities
 - [[#🤝 Societies|Societies]] - Corporate and group packages
 - [[#👨‍🏫 Staff|Staff]] - Club professionals and services
+- [[#🎯 Visitors|Visitors]] - Visitor information and booking
 
 ### Quick Links
 - [[events/2025-06-open-day|Latest Event: Open Day June 2025]]
 - [[members/john-doe|Member Profile: John Doe]]
 - [[courses/heaton-moor|Course: Heaton Moor (Par 70, 6000 yards)]]
-- [[pricing/memberships-2025|2025 Membership Pricing]]
+- [[membership/membership-pricing|2025 Membership Pricing & Application]]
 - [[history/club-history|Club History (Founded 1892)]]
 - [[facilities/clubhouse|Clubhouse Facilities]]
 - [[societies/society-packages|Society & Corporate Packages]]
 - [[staff/club-professional|PGA Professional Simon Marsh]]
+- [[visitors/visitor-information|Visitor Information & Booking]]
+- [[membership/member-benefits|Member Benefits]]
 
 ### Vault Tools
 - [[TEMPLATES|📝 Templates]] - Templates for creating new content
@@ -32,13 +35,13 @@ Welcome to the comprehensive knowledge base for **Heaton Moor Golf Club**, estab
 ## 🆕 Recent Content
 
 ### Latest Updates
+- **New**: [[visitors/visitor-information|Visitor Information & Booking]] - Complete visitor guide with dress code and booking details
+- **New**: [[membership/member-benefits|Member Benefits]] - Comprehensive member benefits and privileges
 - **New**: [[staff/club-professional|PGA Professional Simon Marsh]] - Complete professional services guide
 - **New**: [[societies/society-packages|Society & Corporate Packages]] - Complete group booking information
 - **June 2025**: [[events/2025-06-open-day|Open Day Event]] - 50 attendees, Alice Brown winner
 - **2025**: [[pricing/memberships-2025|Complete 2025 Membership Pricing]] - All categories updated
 - **Enhanced**: [[history/club-history|Complete Club History]] - From 1892 founding to present
-- **New**: [[facilities/clubhouse|Clubhouse Facilities]] - Complete facility information
-- **New**: [[membership/sections|Membership Sections]] - All club sections detailed
 
 ## 🏆 Events
 
@@ -49,13 +52,22 @@ Current and upcoming events:
 
 ### Member Information
 - [[members/john-doe|John Doe]] - Active since 2020, Handicap: 12
+- [[membership/membership-pricing|Membership Pricing & Application]] - 2025 pricing, application process, and membership options
 - [[membership/sections|Membership Sections]] - Men's, Ladies, Seniors, Junior, Mixed, Wednesday
+- [[membership/member-benefits|Member Benefits]] - Complete benefits guide
 
 ### Membership Categories
 - **Full Memberships**: 7-day, 6-day, 5-day options
 - **Intermediate**: Age-based pricing (18-34 years)
 - **Junior**: Cubs (£31.83), Juniors (£63.65)
 - **Special**: Country, Social, CASC memberships
+
+### Key Member Benefits
+- **Unlimited Course Access**: Play when, how often, and how you like
+- **World Handicap System**: Official WHS handicap for competitions
+- **Best Ladies Section**: 80+ active members
+- **Bar Card Discounts**: Up to 20% savings
+- **1892 Club**: Reciprocal golf at historic clubs nationwide
 
 ## 🏌️‍♂️ Courses
 
@@ -69,7 +81,8 @@ Current and upcoming events:
 ## 💰 Pricing
 
 ### 2025 Pricing Structure
-- [[pricing/memberships-2025|Complete 2025 Membership & Pricing]]
+- [[membership/membership-pricing|Complete 2025 Membership Pricing & Application]]
+- [[pricing/memberships-2025|Green Fees & Society Pricing]]
   - **7-Day Membership**: £90/month or £1,080/year
   - **Green Fees**: Summer £40-45, Winter £35-40
   - **Society Packages**: From £17-35 depending on season/group size
@@ -115,6 +128,21 @@ Current and upcoming events:
 - **Coaching**: Individual lessons and playing sessions
 - **Trolley Hire**: £2 per round
 
+## 🎯 Visitors
+
+### Visitor Information
+- [[visitors/visitor-information|Visitor Information & Booking]] - Complete visitor guide
+  - **Booking**: 0161-432-2134 or online
+  - **Green Fees**: Summer £35-45, Winter £30-40
+  - **Buggy Hire**: £30 per buggy (2 available)
+  - **Dress Code**: Smart traditional golf wear required
+
+### Visitor Services
+- **Tee Time Booking**: Online and phone booking available
+- **Course Access**: Historic parkland course in conservation area
+- **Professional Services**: Equipment rental, lessons, advice
+- **Clubhouse Facilities**: Full dining and changing facilities
+
 ## 📖 History
 
 ### Club Heritage
@@ -128,7 +156,7 @@ Current and upcoming events:
 
 ### Using This Vault
 - **Graph View**: Use Obsidian's graph view to see connections between documents
-- **Tags**: Browse by tags like `#event`, `#member`, `#course`, `#facilities`, `#society`, `#professional`
+- **Tags**: Browse by tags like `#event`, `#member`, `#course`, `#facilities`, `#society`, `#professional`, `#visitors`
 - **Search**: Use `Ctrl/Cmd + Shift + F` for full-text search
 - **Quick Switcher**: Use `Ctrl/Cmd + O` to quickly jump between files
 
@@ -141,17 +169,20 @@ Current and upcoming events:
 - `#facilities` - Clubhouse and amenity information
 - `#society` - Corporate and group packages
 - `#professional` - Staff and professional services
+- `#visitors` - Visitor information and booking
 
 ## 📊 Vault Statistics
 
-- **Total Documents**: 14
-- **Categories**: 8 (Events, Members, Courses, Pricing, History, Facilities, Societies, Staff)
+- **Total Documents**: 17
+- **Categories**: 9 (Events, Members, Courses, Pricing, History, Facilities, Societies, Staff, Visitors)
 - **Events**: 1
 - **Members**: 1
 - **Courses**: 1
 - **Facilities**: 2
 - **Societies**: 1
 - **Staff**: 1
+- **Visitors**: 1
+- **Membership**: 3
 - **Templates & Tools**: 3
 
 ## 🛠️ Maintenance
