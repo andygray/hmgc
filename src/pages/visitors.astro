@@ -1,0 +1,366 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const visitorsContent = await getCollection('visitors');
+---
+
+<Layout title="Visitors - Heaton Moor Golf Club">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-golf-green-700 to-golf-green-500 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Visitors Welcome</h1>
+        <p class="text-xl text-golf-green-100 max-w-3xl mx-auto">
+          Experience championship golf at Heaton Moor Golf Club. Book your round today and discover 
+          why we're Greater Manchester's premier golf destination.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Information -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Green Fees -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">Green Fees 2025</h2>
+          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <div class="px-6 py-4 bg-golf-green-50 border-b border-gray-200">
+              <h3 class="text-lg font-semibold text-golf-green-800">Seasonal Pricing</h3>
+            </div>
+            <div class="p-6">
+              <div class="space-y-4">
+                <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                  <div>
+                    <h4 class="font-semibold">Summer Season</h4>
+                    <p class="text-sm text-gray-600">April - October</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xl font-bold text-golf-green-700">£35-45</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                  <div>
+                    <h4 class="font-semibold">Winter Season</h4>
+                    <p class="text-sm text-gray-600">November - March</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xl font-bold text-golf-green-700">£30-40</span>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center py-3">
+                  <div>
+                    <h4 class="font-semibold">Buggy Hire</h4>
+                    <p class="text-sm text-gray-600">Subject to availability</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-xl font-bold text-golf-green-700">£30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Details -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8">How to Book</h2>
+          <div class="space-y-6">
+            <div class="bg-golf-green-50 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-golf-green-800 mb-4">Contact Information</h3>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <span class="text-golf-green-600 text-xl mr-3">📞</span>
+                  <div>
+                    <p class="font-semibold">Phone Booking</p>
+                    <p class="text-gray-600">0161-432-2134</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-golf-green-600 text-xl mr-3">✉️</span>
+                  <div>
+                    <p class="font-semibold">Email</p>
+                    <p class="text-gray-600">info@heatonmoorgolfclub.co.uk</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-golf-green-600 text-xl mr-3">🌐</span>
+                  <div>
+                    <p class="font-semibold">Online Booking</p>
+                    <p class="text-gray-600">Available through our website</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-4">Booking Tips</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li class="flex items-start">
+                  <span class="text-golf-green-600 mr-2 mt-1">•</span>
+                  Book in advance to secure preferred tee times
+                </li>
+                <li class="flex items-start">
+                  <span class="text-golf-green-600 mr-2 mt-1">•</span>
+                  Weekend bookings recommended 7 days ahead
+                </li>
+                <li class="flex items-start">
+                  <span class="text-golf-green-600 mr-2 mt-1">•</span>
+                  Group bookings (4+ players) welcome
+                </li>
+                <li class="flex items-start">
+                  <span class="text-golf-green-600 mr-2 mt-1">•</span>
+                  Buggy availability limited - book early
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dress Code -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Dress Code</h2>
+        <p class="text-lg text-gray-600">Smart traditional golf attire required on course and in clubhouse</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-green-700 mb-4">✓ Allowed</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Collared golf shirts</li>
+            <li>• Golf trousers/chinos</li>
+            <li>• Golf shorts (tailored, knee-length)</li>
+            <li>• Golf shoes with soft spikes</li>
+            <li>• Traditional golf attire</li>
+            <li>• Sweaters and cardigans</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-red-700 mb-4">✗ Not Allowed</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>• T-shirts or vests</li>
+            <li>• Jeans or denim</li>
+            <li>• Tracksuit bottoms</li>
+            <li>• Football shirts</li>
+            <li>• Flip-flops or sandals</li>
+            <li>• Metal spikes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <div class="bg-golf-green-50 rounded-lg p-6">
+          <p class="text-golf-green-800">
+            <strong>Note:</strong> The dress code applies to all areas of the club including the course, 
+            practice areas, and clubhouse. Smart casual attire is acceptable in the bar and dining areas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Information -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Course Information</h2>
+        <p class="text-lg text-gray-600">Championship parkland golf in a beautiful conservation area</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-golf-green-700">18</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Holes</h3>
+          <p class="text-gray-600">Championship layout</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-golf-green-700">70</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Par</h3>
+          <p class="text-gray-600">Challenging rating</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span class="text-lg font-bold text-golf-green-700">6000</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Yards</h3>
+          <p class="text-gray-600">Total length</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <span class="text-lg font-bold text-golf-green-700">1892</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Established</h3>
+          <p class="text-gray-600">Historic course</p>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-white rounded-lg p-8 shadow-md">
+        <h3 class="text-xl font-semibold mb-4">Course Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🌳</span>
+                Tree-lined fairways for accuracy challenge
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🏞️</span>
+                Beautiful parkland setting
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🌿</span>
+                Protected conservation area
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🔄</span>
+                Two 9-hole loops from clubhouse
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🎯</span>
+                Strategic course design
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🏌️</span>
+                Practice facilities available
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Visitor Facilities</h2>
+        <p class="text-lg text-gray-600">Everything you need for the perfect golf experience</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🏠</div>
+          <h3 class="text-lg font-semibold mb-3">Clubhouse</h3>
+          <p class="text-gray-600">Modern facilities with changing rooms, bar, and dining area open from 12 noon until late.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🛍️</div>
+          <h3 class="text-lg font-semibold mb-3">Professional Shop</h3>
+          <p class="text-gray-600">Equipment sales, repairs, and rental. Widest selection in the area with major brand stockist.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🎯</div>
+          <h3 class="text-lg font-semibold mb-3">Practice Facilities</h3>
+          <p class="text-gray-600">Practice areas and golf simulator for year-round improvement and warm-up.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🍽️</div>
+          <h3 class="text-lg font-semibold mb-3">Dining</h3>
+          <p class="text-gray-600">Full kitchen and bar service available. Perfect for post-round refreshments.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🚗</div>
+          <h3 class="text-lg font-semibold mb-3">Buggy Hire</h3>
+          <p class="text-gray-600">Golf buggies available for hire at £30 per buggy. Limited availability - book ahead.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="text-golf-green-600 text-3xl mb-4">🏆</div>
+          <h3 class="text-lg font-semibold mb-3">Professional Services</h3>
+          <p class="text-gray-600">PGA Professional Simon Marsh available for lessons and advice. Contact: 0161 432 2314</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section class="py-16 bg-golf-green-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Plan Your Visit</h2>
+        <p class="text-lg text-golf-green-200">Easily accessible from Manchester and surrounding areas</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Contact & Booking</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <span class="text-2xl mr-4">📞</span>
+              <div>
+                <p class="font-semibold">Phone</p>
+                <p class="text-golf-green-200">0161-432-2134</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-4">✉️</span>
+              <div>
+                <p class="font-semibold">Email</p>
+                <p class="text-golf-green-200">info@heatonmoorgolfclub.co.uk</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <span class="text-2xl mr-4">📍</span>
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-golf-green-200">Mauldeth Road, Heaton Mersey<br>Stockport SK4 3NX</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-6">Opening Hours</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span>Course:</span>
+              <span class="text-golf-green-200">Dawn to Dusk</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Clubhouse:</span>
+              <span class="text-golf-green-200">12:00 PM until late</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Bar & Dining:</span>
+              <span class="text-golf-green-200">12:00 PM until late</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Professional Shop:</span>
+              <span class="text-golf-green-200">Contact for hours</span>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <button class="bg-white text-golf-green-800 px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-50 transition-colors">
+              Book Your Round Today
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

@@ -1,0 +1,28 @@
+{
+  "name": "heaton-moor-golf-club",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Heaton Moor Golf Club website built with Astro, Vue 3, and Tailwind CSS",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/vue": "^4.5.2",
+    "astro": "^4.16.18",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

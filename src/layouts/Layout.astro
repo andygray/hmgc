@@ -1,0 +1,88 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Heaton Moor Golf Club - Established 1892. Member-owned golf club in Stockport offering championship golf, excellent facilities, and warm hospitality." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="h-full bg-white font-sans antialiased">
+    <div class="min-h-full flex flex-col">
+      <!-- Header -->
+      <header class="bg-golf-green-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center py-6">
+            <div class="flex items-center">
+              <img 
+                src="/images/club-assets/logo.webp" 
+                alt="Heaton Moor Golf Club Logo" 
+                class="h-12 w-auto object-contain mr-4"
+              />
+              <h1 class="text-2xl font-bold">Heaton Moor Golf Club</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+              <a href="/" class="text-white hover:text-golf-green-200 transition-colors">Home</a>
+              <a href="/about" class="text-white hover:text-golf-green-200 transition-colors">About</a>
+              <a href="/membership" class="text-white hover:text-golf-green-200 transition-colors">Membership</a>
+              <a href="/visitors" class="text-white hover:text-golf-green-200 transition-colors">Visitors</a>
+              <a href="/facilities" class="text-white hover:text-golf-green-200 transition-colors">Facilities</a>
+              <a href="/contact" class="text-white hover:text-golf-green-200 transition-colors">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-golf-brown-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+              <p class="text-golf-brown-200">Mauldeth Road, Heaton Mersey</p>
+              <p class="text-golf-brown-200">Stockport SK4 3NX</p>
+              <p class="text-golf-brown-200 mt-2">Phone: 0161-432-2134</p>
+              <p class="text-golf-brown-200">Email: info@heatonmoorgolfclub.co.uk</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2 text-golf-brown-200">
+                <li><a href="/membership" class="hover:text-white transition-colors">Membership</a></li>
+                <li><a href="/visitors" class="hover:text-white transition-colors">Visitor Information</a></li>
+                <li><a href="/societies" class="hover:text-white transition-colors">Society Packages</a></li>
+                <li><a href="/facilities" class="hover:text-white transition-colors">Facilities</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">About the Club</h3>
+              <p class="text-golf-brown-200">Established in 1892, Heaton Moor Golf Club is a member-owned club offering championship golf in a beautiful parkland setting.</p>
+            </div>
+          </div>
+          <div class="border-t border-golf-brown-700 mt-8 pt-8 text-center text-golf-brown-300">
+            <p>&copy; 2025 Heaton Moor Golf Club. All rights reserved.</p>
+            <p class="mt-2">Built with Astro, Vue 3, and Tailwind CSS</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html> 

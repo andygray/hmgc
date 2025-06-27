@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const historyContent = await getCollection('history');
+const clubHistory = historyContent.find(item => item.slug === 'club-history');
+---
+
+<Layout title="About Us - Heaton Moor Golf Club">
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-r from-golf-green-700 to-golf-green-500 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About Heaton Moor Golf Club</h1>
+        <p class="text-xl text-golf-green-100 max-w-3xl mx-auto">
+          Over 130 years of golfing tradition, championship golf, and member-owned excellence 
+          in the heart of Greater Manchester.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Section -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Heritage</h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-gray-600 mb-4">
+              Founded in <strong>1892</strong>, Heaton Moor Golf Club stands as one of Greater Manchester's 
+              most prestigious and historic golf clubs. For over 130 years, we have been providing 
+              exceptional golf and hospitality to members and visitors alike.
+            </p>
+            <p class="text-gray-600 mb-4">
+              As a <strong>member-owned club</strong>, we are committed to maintaining the highest 
+              standards of course condition, facilities, and service. Our independence allows us to 
+              focus solely on what matters most: providing an outstanding golf experience.
+            </p>
+            <p class="text-gray-600">
+              Located in a beautiful <strong>conservation area</strong> in Heaton Mersey, Stockport, 
+              our parkland course offers a perfect blend of challenge and beauty, making every 
+              round a memorable experience.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-golf-green-50 rounded-lg p-8">
+          <h3 class="text-xl font-semibold text-golf-green-800 mb-6">Key Milestones</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="bg-golf-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1 text-sm">1892</div>
+              <div>
+                <h4 class="font-semibold">Club Founded</h4>
+                <p class="text-gray-600 text-sm">Heaton Moor Golf Club established</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-golf-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1 text-sm">1892</div>
+              <div>
+                <h4 class="font-semibold">1892 Club Network</h4>
+                <p class="text-gray-600 text-sm">Member of exclusive historic clubs network</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-golf-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1 text-sm">2025</div>
+              <div>
+                <h4 class="font-semibold">Modern Excellence</h4>
+                <p class="text-gray-600 text-sm">Continuing tradition with modern facilities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Details -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Championship Course</h2>
+        <p class="text-lg text-gray-600">A challenging and beautiful parkland course in a conservation area setting</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-golf-green-700">18</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Holes</h3>
+          <p class="text-gray-600">Championship layout with variety</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-golf-green-700">70</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Par</h3>
+          <p class="text-gray-600">Challenging course rating</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl font-bold text-golf-green-700">6000</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Yards</h3>
+          <p class="text-gray-600">Total course length</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-golf-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+            <span class="text-lg font-bold text-golf-green-700">1892</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Established</h3>
+          <p class="text-gray-600">Years of tradition</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg p-8 shadow-md">
+        <h3 class="text-2xl font-semibold mb-6">Course Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold text-golf-green-800 mb-4">Design & Layout</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🌳</span>
+                Tree-lined fairways requiring accuracy
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🔄</span>
+                Two 9-hole loops from clubhouse
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🎯</span>
+                Strategic bunkering and hazards
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-golf-green-800 mb-4">Setting & Environment</h4>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🏞️</span>
+                Beautiful parkland setting
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🌿</span>
+                Protected conservation area
+              </li>
+              <li class="flex items-center">
+                <span class="text-golf-green-600 mr-2">🦋</span>
+                Rich wildlife and natural habitat
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Ownership -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Member-Owned Excellence</h2>
+        <p class="text-lg text-gray-600">What makes us different</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-golf-green-50 rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-golf-green-800 mb-4">Member Benefits</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Direct say in club operations
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Reinvestment in facilities and course
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Focus on member satisfaction
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Long-term stability and planning
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">Our Commitment</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Exceptional course maintenance
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Continuous facility improvements
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Outstanding hospitality
+            </li>
+            <li class="flex items-center">
+              <span class="text-golf-green-600 mr-2">✓</span>
+              Competitive membership rates
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="py-16 bg-golf-green-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Visit Our Historic Club</h2>
+      <p class="text-lg text-golf-green-200 mb-8">
+        Experience over 130 years of golfing tradition in the heart of Greater Manchester
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="text-2xl mb-2">📍</div>
+          <h3 class="font-semibold mb-2">Location</h3>
+          <p class="text-golf-green-200">Mauldeth Road, Heaton Mersey<br>Stockport SK4 3NX</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">📞</div>
+          <h3 class="font-semibold mb-2">Contact</h3>
+          <p class="text-golf-green-200">0161-432-2134</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">✉️</div>
+          <h3 class="font-semibold mb-2">Email</h3>
+          <p class="text-golf-green-200">info@heatonmoorgolfclub.co.uk</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout> 

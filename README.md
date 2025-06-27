@@ -1,6 +1,77 @@
-# 🏌️ Heaton Moor Golf Club Vault
+# 🏌️ Heaton Moor Golf Club
 
-Welcome to the comprehensive knowledge base for **Heaton Moor Golf Club**, established in 1892. This Obsidian vault contains detailed information about our member-owned club located in Heaton Mersey, Stockport.
+Welcome to the **Heaton Moor Golf Club** website and knowledge base, established in 1892. This project combines a comprehensive Obsidian vault with a modern Astro-powered website featuring Vue 3 components and Tailwind CSS styling.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js v18 or higher (tested with Node.js v23)
+- npm or yarn package manager
+
+### Installation & Development
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   npm start
+   ```
+
+3. **Open your browser:**
+   Navigate to `http://localhost:4321` to view the website
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
+
+### Project Structure
+
+```
+heaton-moor-golf-club/
+├── src/
+│   ├── components/          # Vue 3 components
+│   ├── content/            # Markdown content collections
+│   ├── layouts/            # Astro layout components
+│   ├── pages/              # Astro pages (routes)
+│   └── styles/             # CSS and styling
+├── public/                 # Static assets
+├── astro.config.mjs        # Astro configuration
+├── tailwind.config.mjs     # Tailwind CSS configuration
+└── package.json            # Dependencies and scripts
+```
+
+## 📚 Content Management
+
+This project serves as both a website and an Obsidian vault containing detailed information about our member-owned club located in Heaton Mersey, Stockport.
+
+## 🛠️ Technology Stack
+
+- **[Astro](https://astro.build/)** - Static site generator with hybrid rendering
+- **[Vue 3](https://vuejs.org/)** - Progressive JavaScript framework for interactive components
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **Content Collections** - Astro's built-in content management system
+- **Markdown** - Content authoring with frontmatter support
+
+## 🎨 Features
+
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **Interactive Components** - Vue 3 components for dynamic functionality
+- **Content Collections** - Structured content management with type safety
+- **SEO Optimized** - Meta tags, semantic HTML, and performance optimized
+- **Modern Build Process** - Fast development with hot module replacement
+- **Static Generation** - Optimized static site generation for performance
 
 ## 📚 Quick Navigation
 
