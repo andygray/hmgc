@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const events = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     date: z.date(),
@@ -13,7 +13,7 @@ const events = defineCollection({
 });
 
 const members = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string().optional(),
     name: z.string(),
@@ -26,7 +26,7 @@ const members = defineCollection({
 });
 
 const courses = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string().optional(),
     name: z.string().optional(),
@@ -45,7 +45,7 @@ const courses = defineCollection({
 });
 
 const pricing = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     year: z.number().optional(),
@@ -57,7 +57,7 @@ const pricing = defineCollection({
 });
 
 const membership = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     type: z.string(),
@@ -70,7 +70,7 @@ const membership = defineCollection({
 });
 
 const history = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     founded: z.number().optional(),
@@ -80,7 +80,7 @@ const history = defineCollection({
 });
 
 const facilities = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     type: z.string(),
@@ -90,7 +90,7 @@ const facilities = defineCollection({
 });
 
 const societies = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     min_players: z.number().optional(),
@@ -103,7 +103,7 @@ const societies = defineCollection({
 });
 
 const staff = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     name: z.string().optional(),
@@ -116,7 +116,7 @@ const staff = defineCollection({
 });
 
 const visitors = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     booking_phone: z.string().optional(),
@@ -129,12 +129,47 @@ const visitors = defineCollection({
 });
 
 const docs = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     type: z.string().optional(),
     description: z.string().optional(),
     tags: z.array(z.string()).optional(),
+  }),
+});
+
+const playCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    type: z.string(),
+    tags: z.array(z.string()).optional(),
+    equipment: z.object({
+      simulator_model: z.string(),
+      quantity: z.number(),
+      software: z.string(),
+      location: z.string(),
+    }),
+    features: z.array(z.string()),
+    pricing: z.object({
+      duration_guide: z.string(),
+      max_players: z.number(),
+      booking_info: z.string(),
+    }),
+    facilities: z.object({
+      parking: z.boolean(),
+      changing_rooms: z.boolean(),
+      toilets: z.boolean(),
+      bar_distance: z.string(),
+      food_available: z.boolean(),
+    }),
+    booking: z.object({
+      payment_method: z.string(),
+      contact_email: z.string(),
+      contact_phone: z.string(),
+      operating_hours: z.string(),
+    }),
+    rules: z.array(z.string()),
   }),
 });
 
@@ -150,4 +185,5 @@ export const collections = {
   staff,
   visitors,
   docs,
-}; 
+  play: playCollection,
+};

@@ -1,0 +1,81 @@
+{
+  // Astro Configuration
+  "astro.typescript.allowArbitraryAttributes": true,
+  "astro.format.indentFrontmatter": true,
+  
+  // File Associations
+  "files.associations": {
+    "*.astro": "astro",
+    "*.md": "markdown"
+  },
+  
+  // Emmet Configuration
+  "emmet.includeLanguages": {
+    "astro": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "astro": "html"
+  },
+  
+  // Tailwind CSS
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["class:list=\\{([^}]*)\\}", "\"([^\"]*)\""]
+  ],
+  
+  // TypeScript
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.variableTypes.enabled": true,
+  
+  // Prettier Configuration
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  
+  // Markdown Configuration
+  "markdown.preview.breaks": true,
+  "markdown.preview.linkify": true,
+  "markdown.extension.toc.levels": "2..6",
+  
+  // File Explorer
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.astro": true
+  },
+  
+  // Search Configuration
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.astro": true
+  },
+  
+  // Editor Configuration
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  
+  // Git Configuration
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  
+  // Obsidian Integration
+  "obsidian.path": "",
+  "obsidian.useMarkdownLinks": true,
+  
+  // Vue Configuration (for Vue components in Astro)
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  "vetur.validation.style": false
+} 

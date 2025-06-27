@@ -1,19 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
-const visitorsContent = await getCollection('visitors');
+const visitorsContent = await getCollection("visitors");
+const visitorInfo = visitorsContent.find(
+  (item) => item.slug === "visitor-information"
+);
 ---
 
 <Layout title="Visitors - Heaton Moor Golf Club">
   <!-- Hero Section -->
-  <div class="bg-gradient-to-r from-golf-green-700 to-golf-green-500 text-white py-16">
+  <div
+    class="bg-gradient-to-r from-golf-green-700 to-golf-green-500 text-white py-16"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Visitors Welcome</h1>
         <p class="text-xl text-golf-green-100 max-w-3xl mx-auto">
-          Experience championship golf at Heaton Moor Golf Club. Book your round today and discover 
-          why we're Greater Manchester's premier golf destination.
+          Experience championship golf at Heaton Moor Golf Club. Book your round
+          today and discover why we're Greater Manchester's premier golf
+          destination.
         </p>
       </div>
     </div>
@@ -26,28 +32,40 @@ const visitorsContent = await getCollection('visitors');
         <!-- Green Fees -->
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-8">Green Fees 2025</h2>
-          <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+          <div
+            class="bg-white border border-gray-200 rounded-lg overflow-hidden"
+          >
             <div class="px-6 py-4 bg-golf-green-50 border-b border-gray-200">
-              <h3 class="text-lg font-semibold text-golf-green-800">Seasonal Pricing</h3>
+              <h3 class="text-lg font-semibold text-golf-green-800">
+                Seasonal Pricing
+              </h3>
             </div>
             <div class="p-6">
               <div class="space-y-4">
-                <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                <div
+                  class="flex justify-between items-center py-3 border-b border-gray-100"
+                >
                   <div>
                     <h4 class="font-semibold">Summer Season</h4>
                     <p class="text-sm text-gray-600">April - October</p>
                   </div>
                   <div class="text-right">
-                    <span class="text-xl font-bold text-golf-green-700">£35-45</span>
+                    <span class="text-xl font-bold text-golf-green-700"
+                      >{visitorInfo?.data.green_fees_summer || "£35-45"}</span
+                    >
                   </div>
                 </div>
-                <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                <div
+                  class="flex justify-between items-center py-3 border-b border-gray-100"
+                >
                   <div>
                     <h4 class="font-semibold">Winter Season</h4>
                     <p class="text-sm text-gray-600">November - March</p>
                   </div>
                   <div class="text-right">
-                    <span class="text-xl font-bold text-golf-green-700">£30-40</span>
+                    <span class="text-xl font-bold text-golf-green-700"
+                      >{visitorInfo?.data.green_fees_winter || "£30-40"}</span
+                    >
                   </div>
                 </div>
                 <div class="flex justify-between items-center py-3">
@@ -56,7 +74,9 @@ const visitorsContent = await getCollection('visitors');
                     <p class="text-sm text-gray-600">Subject to availability</p>
                   </div>
                   <div class="text-right">
-                    <span class="text-xl font-bold text-golf-green-700">£30</span>
+                    <span class="text-xl font-bold text-golf-green-700"
+                      >£{visitorInfo?.data.buggy_hire || "30"}</span
+                    >
                   </div>
                 </div>
               </div>
@@ -69,13 +89,17 @@ const visitorsContent = await getCollection('visitors');
           <h2 class="text-3xl font-bold text-gray-900 mb-8">How to Book</h2>
           <div class="space-y-6">
             <div class="bg-golf-green-50 rounded-lg p-6">
-              <h3 class="text-lg font-semibold text-golf-green-800 mb-4">Contact Information</h3>
+              <h3 class="text-lg font-semibold text-golf-green-800 mb-4">
+                Contact Information
+              </h3>
               <div class="space-y-3">
                 <div class="flex items-center">
                   <span class="text-golf-green-600 text-xl mr-3">📞</span>
                   <div>
                     <p class="font-semibold">Phone Booking</p>
-                    <p class="text-gray-600">0161-432-2134</p>
+                    <p class="text-gray-600">
+                      {visitorInfo?.data.booking_phone || "0161-432-2134"}
+                    </p>
                   </div>
                 </div>
                 <div class="flex items-center">
@@ -127,7 +151,9 @@ const visitorsContent = await getCollection('visitors');
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Dress Code</h2>
-        <p class="text-lg text-gray-600">Smart traditional golf attire required on course and in clubhouse</p>
+        <p class="text-lg text-gray-600">
+          Smart traditional golf attire required on course and in clubhouse
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -159,8 +185,9 @@ const visitorsContent = await getCollection('visitors');
       <div class="mt-8 text-center">
         <div class="bg-golf-green-50 rounded-lg p-6">
           <p class="text-golf-green-800">
-            <strong>Note:</strong> The dress code applies to all areas of the club including the course, 
-            practice areas, and clubhouse. Smart casual attire is acceptable in the bar and dining areas.
+            <strong>Note:</strong> The dress code applies to all areas of the club
+            including the course, practice areas, and clubhouse. Smart casual attire
+            is acceptable in the bar and dining areas.
           </p>
         </div>
       </div>
@@ -171,13 +198,19 @@ const visitorsContent = await getCollection('visitors');
   <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Course Information</h2>
-        <p class="text-lg text-gray-600">Championship parkland golf in a beautiful conservation area</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Course Information
+        </h2>
+        <p class="text-lg text-gray-600">
+          Championship parkland golf in a beautiful conservation area
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center">
-          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div
+            class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
             <span class="text-2xl font-bold text-golf-green-700">18</span>
           </div>
           <h3 class="text-lg font-semibold mb-2">Holes</h3>
@@ -185,7 +218,9 @@ const visitorsContent = await getCollection('visitors');
         </div>
 
         <div class="text-center">
-          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div
+            class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
             <span class="text-2xl font-bold text-golf-green-700">70</span>
           </div>
           <h3 class="text-lg font-semibold mb-2">Par</h3>
@@ -193,7 +228,9 @@ const visitorsContent = await getCollection('visitors');
         </div>
 
         <div class="text-center">
-          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div
+            class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
             <span class="text-lg font-bold text-golf-green-700">6000</span>
           </div>
           <h3 class="text-lg font-semibold mb-2">Yards</h3>
@@ -201,7 +238,9 @@ const visitorsContent = await getCollection('visitors');
         </div>
 
         <div class="text-center">
-          <div class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <div
+            class="bg-golf-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+          >
             <span class="text-lg font-bold text-golf-green-700">1892</span>
           </div>
           <h3 class="text-lg font-semibold mb-2">Established</h3>
@@ -253,45 +292,67 @@ const visitorsContent = await getCollection('visitors');
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Visitor Facilities</h2>
-        <p class="text-lg text-gray-600">Everything you need for the perfect golf experience</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Visitor Facilities
+        </h2>
+        <p class="text-lg text-gray-600">
+          Everything you need for the perfect golf experience
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🏠</div>
           <h3 class="text-lg font-semibold mb-3">Clubhouse</h3>
-          <p class="text-gray-600">Modern facilities with changing rooms, bar, and dining area open from 12 noon until late.</p>
+          <p class="text-gray-600">
+            Modern facilities with changing rooms, bar, and dining area open
+            from 12 noon until late.
+          </p>
         </div>
 
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🛍️</div>
           <h3 class="text-lg font-semibold mb-3">Professional Shop</h3>
-          <p class="text-gray-600">Equipment sales, repairs, and rental. Widest selection in the area with major brand stockist.</p>
+          <p class="text-gray-600">
+            Equipment sales, repairs, and rental. Widest selection in the area
+            with major brand stockist.
+          </p>
         </div>
 
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🎯</div>
           <h3 class="text-lg font-semibold mb-3">Practice Facilities</h3>
-          <p class="text-gray-600">Practice areas and golf simulator for year-round improvement and warm-up.</p>
+          <p class="text-gray-600">
+            Practice areas and golf simulator for year-round improvement and
+            warm-up.
+          </p>
         </div>
 
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🍽️</div>
           <h3 class="text-lg font-semibold mb-3">Dining</h3>
-          <p class="text-gray-600">Full kitchen and bar service available. Perfect for post-round refreshments.</p>
+          <p class="text-gray-600">
+            Full kitchen and bar service available. Perfect for post-round
+            refreshments.
+          </p>
         </div>
 
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🚗</div>
           <h3 class="text-lg font-semibold mb-3">Buggy Hire</h3>
-          <p class="text-gray-600">Golf buggies available for hire at £30 per buggy. Limited availability - book ahead.</p>
+          <p class="text-gray-600">
+            Golf buggies available for hire at £30 per buggy. Limited
+            availability - book ahead.
+          </p>
         </div>
 
         <div class="bg-white rounded-lg p-6 shadow-md">
           <div class="text-golf-green-600 text-3xl mb-4">🏆</div>
           <h3 class="text-lg font-semibold mb-3">Professional Services</h3>
-          <p class="text-gray-600">PGA Professional Simon Marsh available for lessons and advice. Contact: 0161 432 2314</p>
+          <p class="text-gray-600">
+            PGA Professional Simon Marsh available for lessons and advice.
+            Contact: 0161 432 2314
+          </p>
         </div>
       </div>
     </div>
@@ -302,7 +363,9 @@ const visitorsContent = await getCollection('visitors');
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Plan Your Visit</h2>
-        <p class="text-lg text-golf-green-200">Easily accessible from Manchester and surrounding areas</p>
+        <p class="text-lg text-golf-green-200">
+          Easily accessible from Manchester and surrounding areas
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -327,7 +390,9 @@ const visitorsContent = await getCollection('visitors');
               <span class="text-2xl mr-4">📍</span>
               <div>
                 <p class="font-semibold">Address</p>
-                <p class="text-golf-green-200">Mauldeth Road, Heaton Mersey<br>Stockport SK4 3NX</p>
+                <p class="text-golf-green-200">
+                  Mauldeth Road, Heaton Mersey<br />Stockport SK4 3NX
+                </p>
               </div>
             </div>
           </div>
@@ -355,7 +420,9 @@ const visitorsContent = await getCollection('visitors');
           </div>
 
           <div class="mt-8">
-            <button class="bg-white text-golf-green-800 px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-50 transition-colors">
+            <button
+              class="bg-white text-golf-green-800 px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-50 transition-colors"
+            >
               Book Your Round Today
             </button>
           </div>
@@ -363,4 +430,4 @@ const visitorsContent = await getCollection('visitors');
       </div>
     </div>
   </section>
-</Layout> 
+</Layout>

@@ -231,6 +231,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"membership">
 } & { render(): Render[".md"] };
 };
+"play": {
+"golf-simulator.md": {
+	id: "golf-simulator.md";
+  slug: "golf-simulator";
+  body: string;
+  collection: "play";
+  data: InferEntrySchema<"play">
+} & { render(): Render[".md"] };
+};
 "pricing": {
 "memberships-2025.md": {
 	id: "memberships-2025.md";

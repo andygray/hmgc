@@ -1,53 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.vue';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.vue";
+import { getCollection } from "astro:content";
 
 // Get content from collections
-const membershipContent = await getCollection('membership');
-const coursesContent = await getCollection('courses');
-const facilitiesContent = await getCollection('facilities');
-const visitorsContent = await getCollection('visitors');
+const coursesContent = await getCollection("courses");
+const visitorsContent = await getCollection("visitors");
+const historyContent = await getCollection("history");
+
+// Get specific content items
+const clubHistory = historyContent.find((item) => item.slug === "club-history");
+const visitorInfo = visitorsContent.find(
+  (item) => item.slug === "visitor-information"
+);
+const courseInfo = coursesContent.find((item) => item.slug === "heaton-moor");
 ---
 
 <Layout title="Heaton Moor Golf Club - Home">
   <Hero client:load />
-  
+
   <!-- Quick Overview Section -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Heaton Moor Golf Club?</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Why Choose Heaton Moor Golf Club?
+        </h2>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Over 130 years of tradition, championship golf, and exceptional hospitality in the heart of Greater Manchester.
+          Over 130 years of tradition, championship golf, and exceptional
+          hospitality in the heart of Greater Manchester.
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-golf-green-600 text-4xl mb-4">🏆</div>
+          <div class="text-club-gold-600 text-4xl mb-4">🏆</div>
           <h3 class="text-xl font-semibold mb-3">Championship Golf</h3>
           <p class="text-gray-600">
-            Play our challenging par 70, 6000-yard parkland course set in a beautiful conservation area. 
-            Two 9-hole loops provide variety and test every aspect of your game.
+            Play our challenging par {courseInfo?.data.par || "70"}, {
+              courseInfo?.data.length || "6,000-yard"
+            }
+            {courseInfo?.data.course_type?.toLowerCase() || "parkland"} course set
+            in a beautiful conservation area. Two 9-hole loops provide variety and
+            test every aspect of your game.
           </p>
         </div>
-        
+
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-golf-green-600 text-4xl mb-4">👥</div>
+          <div class="text-club-gold-600 text-4xl mb-4">👥</div>
           <h3 class="text-xl font-semibold mb-3">Member-Owned Excellence</h3>
           <p class="text-gray-600">
-            As a member-owned club, we're committed to providing exceptional value and service. 
-            Join our community and enjoy unlimited access, competitions, and social events.
+            As a member-owned club, we're committed to providing exceptional
+            value and service. Join our community and enjoy unlimited access,
+            competitions, and social events.
           </p>
         </div>
-        
+
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-golf-green-600 text-4xl mb-4">🏠</div>
+          <div class="text-club-gold-600 text-4xl mb-4">🏠</div>
           <h3 class="text-xl font-semibold mb-3">Outstanding Facilities</h3>
           <p class="text-gray-600">
-            Modern clubhouse with dining facilities, professional shop, practice areas, 
-            and function room for events. Everything you need for the perfect golf experience.
+            Modern clubhouse with dining facilities, professional shop, practice
+            areas, and function room for events. Everything you need for the
+            perfect golf experience.
           </p>
         </div>
       </div>
@@ -59,27 +74,38 @@ const visitorsContent = await getCollection('visitors');
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-6">A Legacy of Excellence Since 1892</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            A Legacy of Excellence Since {clubHistory?.data.founded || "1892"}
+          </h2>
           <p class="text-lg text-gray-600 mb-6">
-            For over 130 years, Heaton Moor Golf Club has been a cornerstone of Greater Manchester's golfing community. 
-            Our member-owned club combines rich tradition with modern excellence, offering an unparalleled golfing experience 
-            in our beautiful parkland setting.
+            For over {
+              new Date().getFullYear() - (clubHistory?.data.founded || 1892)
+            } years, Heaton Moor Golf Club has been a cornerstone of Greater Manchester's
+            golfing community. Our member-owned club combines rich tradition with
+            modern excellence, offering an unparalleled golfing experience in our
+            beautiful parkland setting.
           </p>
           <p class="text-lg text-gray-600 mb-8">
-            As proud members of the prestigious 1892 Club network, we maintain the highest standards of golf and hospitality 
-            while preserving the timeless values that have made us a beloved institution.
+            As proud members of the prestigious 1892 Club network, we maintain
+            the highest standards of golf and hospitality while preserving the
+            timeless values that have made us a beloved institution.
           </p>
-          <a href="/about" class="bg-golf-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-700 transition-colors">
+          <a
+            href="/about"
+            class="bg-club-navy-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-club-navy-700 transition-colors"
+          >
             Discover Our History
           </a>
         </div>
         <div class="text-center">
-          <img 
-            src="/images/club-assets/logo.webp" 
-            alt="Heaton Moor Golf Club - Est. 1892" 
+          <img
+            src="/images/club-assets/logo.webp"
+            alt="Heaton Moor Golf Club - Est. 1892"
             class="mx-auto h-64 w-auto object-contain opacity-90"
           />
-          <p class="text-golf-green-700 font-semibold mt-4">Established 1892 • Member of the 1892 Club</p>
+          <p class="text-club-navy-700 font-semibold mt-4">
+            Established 1892 • Member of the 1892 Club
+          </p>
         </div>
       </div>
     </div>
@@ -91,38 +117,62 @@ const visitorsContent = await getCollection('visitors');
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Club</h2>
         <p class="text-lg text-gray-600">
-          Flexible membership options to suit every golfer, from juniors to seniors.
+          Flexible membership options to suit every golfer, from juniors to
+          seniors.
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-golf-green-50 p-6 rounded-lg border border-golf-green-200">
-          <h3 class="text-lg font-semibold text-golf-green-800 mb-2">7-Day Membership</h3>
-          <div class="text-2xl font-bold text-golf-green-700 mb-2">£90/month</div>
-          <p class="text-sm text-golf-green-600">Unlimited access, all competitions, full facilities</p>
+        <div class="bg-club-navy-50 p-6 rounded-lg border border-club-navy-200">
+          <h3 class="text-lg font-semibold text-club-navy-800 mb-2">
+            7-Day Membership
+          </h3>
+          <div class="text-2xl font-bold text-club-gold-700 mb-2">
+            £90/month
+          </div>
+          <p class="text-sm text-club-navy-600">
+            Unlimited access, all competitions, full facilities
+          </p>
         </div>
-        
-        <div class="bg-golf-green-50 p-6 rounded-lg border border-golf-green-200">
-          <h3 class="text-lg font-semibold text-golf-green-800 mb-2">Intermediate</h3>
-          <div class="text-2xl font-bold text-golf-green-700 mb-2">From £21/month</div>
-          <p class="text-sm text-golf-green-600">Age-based pricing for golfers 18-34 years</p>
+
+        <div class="bg-club-navy-50 p-6 rounded-lg border border-club-navy-200">
+          <h3 class="text-lg font-semibold text-club-navy-800 mb-2">
+            Intermediate
+          </h3>
+          <div class="text-2xl font-bold text-club-gold-700 mb-2">
+            From £21/month
+          </div>
+          <p class="text-sm text-club-navy-600">
+            Age-based pricing for golfers 18-34 years
+          </p>
         </div>
-        
-        <div class="bg-golf-green-50 p-6 rounded-lg border border-golf-green-200">
-          <h3 class="text-lg font-semibold text-golf-green-800 mb-2">Junior</h3>
-          <div class="text-2xl font-bold text-golf-green-700 mb-2">£63.65/year</div>
-          <p class="text-sm text-golf-green-600">Ages 11-17, coaching programs included</p>
+
+        <div class="bg-club-navy-50 p-6 rounded-lg border border-club-navy-200">
+          <h3 class="text-lg font-semibold text-club-navy-800 mb-2">Junior</h3>
+          <div class="text-2xl font-bold text-club-gold-700 mb-2">
+            £63.65/year
+          </div>
+          <p class="text-sm text-club-navy-600">
+            Ages 11-17, coaching programs included
+          </p>
         </div>
-        
-        <div class="bg-golf-green-50 p-6 rounded-lg border border-golf-green-200">
-          <h3 class="text-lg font-semibold text-golf-green-800 mb-2">Cub</h3>
-          <div class="text-2xl font-bold text-golf-green-700 mb-2">£31.83/year</div>
-          <p class="text-sm text-golf-green-600">Ages 10 and under, perfect introduction to golf</p>
+
+        <div class="bg-club-navy-50 p-6 rounded-lg border border-club-navy-200">
+          <h3 class="text-lg font-semibold text-club-navy-800 mb-2">Cub</h3>
+          <div class="text-2xl font-bold text-club-gold-700 mb-2">
+            £31.83/year
+          </div>
+          <p class="text-sm text-club-navy-600">
+            Ages 10 and under, perfect introduction to golf
+          </p>
         </div>
       </div>
-      
+
       <div class="text-center mt-8">
-        <a href="/membership" class="bg-golf-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-700 transition-colors">
+        <a
+          href="/membership"
+          class="bg-club-navy-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-club-navy-700 transition-colors"
+        >
           View All Membership Options
         </a>
       </div>
@@ -138,47 +188,56 @@ const visitorsContent = await getCollection('visitors');
           Experience our championship course and warm hospitality as a visitor.
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white p-8 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">Green Fees</h3>
           <div class="space-y-3">
             <div class="flex justify-between">
               <span>Summer (Apr-Oct)</span>
-              <span class="font-semibold">£35-45</span>
+              <span class="font-semibold"
+                >{visitorInfo?.data.green_fees_summer || "£35-45"}</span
+              >
             </div>
             <div class="flex justify-between">
               <span>Winter (Nov-Mar)</span>
-              <span class="font-semibold">£30-40</span>
+              <span class="font-semibold"
+                >{visitorInfo?.data.green_fees_winter || "£30-40"}</span
+              >
             </div>
             <div class="flex justify-between">
               <span>Buggy Hire</span>
-              <span class="font-semibold">£30</span>
+              <span class="font-semibold"
+                >£{visitorInfo?.data.buggy_hire || "30"}</span
+              >
             </div>
           </div>
         </div>
-        
+
         <div class="bg-white p-8 rounded-lg shadow-md">
           <h3 class="text-xl font-semibold mb-4">Booking Information</h3>
           <div class="space-y-3">
             <div class="flex items-center">
-              <span class="text-golf-green-600 mr-2">📞</span>
-              <span>0161-432-2134</span>
+              <span class="text-club-gold-600 mr-2">📞</span>
+              <span>{visitorInfo?.data.booking_phone || "0161-432-2134"}</span>
             </div>
             <div class="flex items-center">
-              <span class="text-golf-green-600 mr-2">✉️</span>
+              <span class="text-club-gold-600 mr-2">✉️</span>
               <span>info@heatonmoorgolfclub.co.uk</span>
             </div>
             <div class="flex items-center">
-              <span class="text-golf-green-600 mr-2">🌐</span>
+              <span class="text-club-gold-600 mr-2">🌐</span>
               <span>Online booking available</span>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="text-center mt-8">
-        <a href="/visitors" class="bg-golf-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-golf-green-700 transition-colors">
+        <a
+          href="/visitors"
+          class="bg-club-navy-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-club-navy-700 transition-colors"
+        >
           Complete Visitor Information
         </a>
       </div>
@@ -186,15 +245,16 @@ const visitorsContent = await getCollection('visitors');
   </section>
 
   <!-- Contact Section -->
-  <section class="py-16 bg-golf-green-800 text-white">
+  <section class="py-16 bg-club-navy-800 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Visit Us Today</h2>
-        <p class="text-lg text-golf-green-200">
-          Located in the heart of Stockport, easily accessible from Manchester and surrounding areas.
+        <p class="text-lg text-club-navy-200">
+          Located in the heart of Stockport, easily accessible from Manchester
+          and surrounding areas.
         </p>
       </div>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-xl font-semibold mb-4">Contact Details</h3>
@@ -213,7 +273,7 @@ const visitorsContent = await getCollection('visitors');
             </p>
           </div>
         </div>
-        
+
         <div>
           <h3 class="text-xl font-semibold mb-4">Opening Hours</h3>
           <div class="space-y-2">
@@ -226,4 +286,4 @@ const visitorsContent = await getCollection('visitors');
       </div>
     </div>
   </section>
-</Layout> 
+</Layout>

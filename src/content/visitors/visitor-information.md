@@ -73,20 +73,20 @@ Heaton Moor Golf Club extends a warm welcome to visiting golfers. Our historic p
 ### Visitor Group Packages
 
 #### Summer Visitor Rates
-| Group Size | Weekday | Weekend |
-|------------|---------|---------|
-| **1 person** | £30 | £35 |
-| **2 players** | £55 | £66 |
-| **3 players** | £81 | £95 |
-| **4 players** | £100 | £120 |
+| Group Size    | Weekday | Weekend |
+| ------------- | ------- | ------- |
+| **1 person**  | £30     | £35     |
+| **2 players** | £55     | £66     |
+| **3 players** | £81     | £95     |
+| **4 players** | £100    | £120    |
 
 #### Winter Visitor Rates
-| Group Size | Weekday | Weekend |
-|------------|---------|---------|
-| **1 person** | £25 | £30 |
-| **2 players** | £45 | £56 |
-| **3 players** | £66 | £80 |
-| **4 players** | £80 | £100 |
+| Group Size    | Weekday | Weekend |
+| ------------- | ------- | ------- |
+| **1 person**  | £25     | £30     |
+| **2 players** | £45     | £56     |
+| **3 players** | £66     | £80     |
+| **4 players** | £80     | £100    |
 
 ## Buggy Hire
 

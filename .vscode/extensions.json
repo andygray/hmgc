@@ -1,0 +1,38 @@
+{
+  "recommendations": [
+    // Astro Development
+    "astro-build.astro-vscode",
+    "unifiedjs.vscode-mdx",
+    
+    // Vue.js Support (for Vue components in Astro)
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    
+    // TypeScript & JavaScript
+    "ms-vscode.vscode-typescript-next",
+    
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+    
+    // Markdown & Obsidian
+    "obsidian.obsidian-vscode",
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+    "bierner.markdown-mermaid",
+    
+    // General Development
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    
+    // Git & Version Control
+    "eamodio.gitlens",
+    
+    // File Management
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    
+    // Code Quality
+    "dbaeumer.vscode-eslint"
+  ]
+} 
