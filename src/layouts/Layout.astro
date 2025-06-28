@@ -37,10 +37,14 @@ const {
               <img
                 src="/images/club-assets/logo.webp"
                 alt="Heaton Moor Golf Club Logo"
-                class="h-12 w-auto object-contain mr-4"
+                class="h-10 sm:h-12 w-auto object-contain mr-2 sm:mr-4"
               />
-              <h1 class="text-2xl font-bold">Heaton Moor Golf Club</h1>
+              <h1 class="text-lg sm:text-2xl font-bold">
+                Heaton Moor Golf Club
+              </h1>
             </div>
+
+            <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-8">
               <a
                 href="/"
@@ -78,6 +82,89 @@ const {
                 >Contact</a
               >
             </nav>
+
+            <!-- Mobile menu button -->
+            <button
+              id="mobile-menu-button"
+              class="md:hidden p-2 rounded-md text-white hover:text-club-gold-300 hover:bg-club-navy-700 focus:outline-none focus:ring-2 focus:ring-club-gold-300"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span class="sr-only">Open main menu</span>
+              <!-- Hamburger icon -->
+              <svg
+                id="hamburger-icon"
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <!-- Close icon -->
+              <svg
+                id="close-icon"
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Navigation Menu -->
+          <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 border-t border-club-navy-700">
+              <a
+                href="/"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Home</a
+              >
+              <a
+                href="/about"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >About</a
+              >
+              <a
+                href="/membership"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Membership</a
+              >
+              <a
+                href="/visitors"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Visitors</a
+              >
+              <a
+                href="/facilities"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Facilities</a
+              >
+              <a
+                href="/golf-simulator"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Golf Simulator</a
+              >
+              <a
+                href="/contact"
+                class="block px-3 py-2 text-white hover:text-club-gold-300 hover:bg-club-navy-700 rounded-md transition-colors"
+                >Contact</a
+              >
+            </div>
           </div>
         </div>
       </header>
@@ -145,14 +232,75 @@ const {
               </p>
             </div>
           </div>
-          <div
-            class="border-t border-heritage-brown-700 mt-8 pt-8 text-center text-heritage-brown-300"
-          >
-            <p>&copy; 2025 Heaton Moor Golf Club. All rights reserved.</p>
-            <p class="mt-2">Built with Astro, Vue 3, and Tailwind CSS</p>
-          </div>
         </div>
       </footer>
     </div>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        if (mobileMenuButton && mobileMenu && hamburgerIcon && closeIcon) {
+          mobileMenuButton.addEventListener("click", function () {
+            const isExpanded =
+              mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+            // Toggle menu visibility
+            mobileMenu.classList.toggle("hidden");
+
+            // Toggle icons
+            hamburgerIcon.classList.toggle("hidden");
+            hamburgerIcon.classList.toggle("block");
+            closeIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("block");
+
+            // Update aria-expanded
+            mobileMenuButton.setAttribute(
+              "aria-expanded",
+              isExpanded ? "false" : "true"
+            );
+          });
+
+          // Close mobile menu when clicking on a link
+          const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+          mobileMenuLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+              hamburgerIcon.classList.remove("hidden");
+              hamburgerIcon.classList.add("block");
+              closeIcon.classList.add("hidden");
+              closeIcon.classList.remove("block");
+              mobileMenuButton.setAttribute("aria-expanded", "false");
+            });
+          });
+
+          // Close mobile menu when clicking outside
+          document.addEventListener("click", function (event) {
+            if (!event.target) return;
+
+            const target = event.target as Element;
+            const isClickInsideMenu = mobileMenu.contains(target);
+            const isClickOnButton = mobileMenuButton.contains(target);
+
+            if (
+              !isClickInsideMenu &&
+              !isClickOnButton &&
+              !mobileMenu.classList.contains("hidden")
+            ) {
+              mobileMenu.classList.add("hidden");
+              hamburgerIcon.classList.remove("hidden");
+              hamburgerIcon.classList.add("block");
+              closeIcon.classList.add("hidden");
+              closeIcon.classList.remove("block");
+              mobileMenuButton.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
