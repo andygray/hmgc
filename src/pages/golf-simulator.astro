@@ -33,157 +33,222 @@ const { Content } = await simulatorInfo.render();
       </div>
     </section>
 
-    <!-- Equipment Info Section -->
-    <section class="py-16 bg-white">
+    <!-- Online Booking Section -->
+    <section class="py-16 bg-club-navy-800 text-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">
-              Premium Equipment
-            </h2>
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🎯</span>
-                <span class="font-semibold">Model:</span>
-                <span class="ml-2"
-                  >{simulatorInfo.data.equipment.simulator_model}</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">📊</span>
-                <span class="font-semibold">Software:</span>
-                <span class="ml-2">{simulatorInfo.data.equipment.software}</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">📍</span>
-                <span class="font-semibold">Location:</span>
-                <span class="ml-2">{simulatorInfo.data.equipment.location}</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🔢</span>
-                <span class="font-semibold">Available:</span>
-                <span class="ml-2"
-                  >{simulatorInfo.data.equipment.quantity} Simulators</span
-                >
-              </div>
-            </div>
-          </div>
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold mb-4">
+            Book Your Golf Simulator Session
+          </h2>
+        </div>
 
-          <div class="bg-club-navy-50 p-8 rounded-lg">
-            <h3 class="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
-            <ul class="space-y-2">
-              {
-                simulatorInfo.data.features.map((feature) => (
-                  <li class="flex items-start">
-                    <span class="text-club-gold-600 mr-2 mt-1">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))
-              }
-            </ul>
+        <div class="mb-4">
+          <iframe
+            src="https://hmgcgolfsimulators-4-7-4.youcanbook.me?embed=true&contentMode=all&showTitle=false"
+            frameborder="0"
+            allow="payment"
+            style="width: 100%; min-height: 300px; border: 0px; background-color: transparent; height: 711px;"
+            title="Golf Simulator Booking System"></iframe>
+        </div>
+
+        <div class="text-center">
+          <p class="text-club-navy-200 mb-4">
+            Need help with your booking or have special requirements?
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:0161-432-2134"
+              class="bg-white text-club-navy-800 px-6 py-3 rounded-lg font-semibold hover:bg-club-navy-50 transition-colors inline-flex items-center justify-center"
+            >
+              📞 Call: 0161-432-2134
+            </a>
+            <a
+              href="mailto:info@heatonmoorgolfclub.co.uk"
+              class="bg-club-navy-600 text-white border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-club-navy-700 transition-colors inline-flex items-center justify-center"
+            >
+              ✉️ Email Us
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Main Content Section (Using Slot) -->
+    <!-- Main Content Section with Equipment Info -->
     <section class="py-16 bg-gray-50">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <div
-            class="prose prose-lg prose-club-navy max-w-none prose-headings:text-club-navy-800 prose-a:text-club-gold-600 prose-strong:text-club-navy-700"
-          >
-            <Content />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Left Column: Premium Golf Simulation Experience -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div
+              class="prose prose-lg prose-club-navy max-w-none prose-headings:text-club-navy-800 prose-a:text-club-navy-600 prose-strong:text-club-navy-700"
+            >
+              <Content />
+            </div>
+          </div>
+
+          <!-- Right Column: Equipment and Features -->
+          <div class="space-y-6">
+            <!-- Premium Equipment Box -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h2 class="text-2xl font-bold text-club-navy-800 mb-6">
+                Premium Equipment
+              </h2>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3">🎯</span>
+                  <span class="font-semibold">Model:</span>
+                  <span class="ml-2 text-sm"
+                    >{simulatorInfo.data.equipment.simulator_model}</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3">📊</span>
+                  <span class="font-semibold">Software:</span>
+                  <span class="ml-2"
+                    >{simulatorInfo.data.equipment.software}</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3">📍</span>
+                  <span class="font-semibold">Location:</span>
+                  <span class="ml-2"
+                    >{simulatorInfo.data.equipment.location}</span
+                  >
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3">🔢</span>
+                  <span class="font-semibold">Available:</span>
+                  <span class="ml-2"
+                    >{simulatorInfo.data.equipment.quantity} Simulators</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Features Box -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-club-navy-800 mb-6">
+                Key Features
+              </h3>
+              <ul class="space-y-3">
+                {
+                  simulatorInfo.data.features.map((feature) => (
+                    <li class="flex items-start">
+                      <span class="text-club-navy-600 mr-3 mt-1">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <!-- Session Information Box -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-club-navy-800 mb-6">
+                Session Information
+              </h3>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Duration Guide:</span>
+                  <span class="text-sm"
+                    >{simulatorInfo.data.pricing.duration_guide}</span
+                  >
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="font-semibold">Max Players:</span>
+                  <span
+                    >{simulatorInfo.data.pricing.max_players} per simulator</span
+                  >
+                </div>
+                <div class="pt-4 border-t">
+                  <p class="text-sm text-gray-600">
+                    {simulatorInfo.data.pricing.booking_info}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Facilities Available Box -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-club-navy-800 mb-6">
+                Facilities Available
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">🅿️</span>
+                  <div>
+                    <span class="font-semibold">Free Parking</span>
+                    <p class="text-gray-600 text-sm">
+                      {
+                        simulatorInfo.data.facilities.parking
+                          ? "Available on-site"
+                          : "Not Available"
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">🚿</span>
+                  <div>
+                    <span class="font-semibold">Changing Rooms</span>
+                    <p class="text-gray-600 text-sm">
+                      {
+                        simulatorInfo.data.facilities.changing_rooms
+                          ? "Available"
+                          : "Not Available"
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">🚻</span>
+                  <div>
+                    <span class="font-semibold">Toilets</span>
+                    <p class="text-gray-600 text-sm">
+                      {
+                        simulatorInfo.data.facilities.toilets
+                          ? "Available"
+                          : "Not Available"
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">🍺</span>
+                  <div>
+                    <span class="font-semibold">Bar</span>
+                    <p class="text-gray-600 text-sm">
+                      Only {simulatorInfo.data.facilities.bar_distance} away
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">🍽️</span>
+                  <div>
+                    <span class="font-semibold">Food</span>
+                    <p class="text-gray-600 text-sm">
+                      {
+                        simulatorInfo.data.facilities.food_available
+                          ? "Available (based on opening hours)"
+                          : "Not Available"
+                      }
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-club-navy-600 mr-3 text-xl">💳</span>
+                  <div>
+                    <span class="font-semibold">Secure Payment</span>
+                    <p class="text-gray-600 text-sm">
+                      Online payment via Stripe
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Pricing & Booking Info -->
-    <section class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Pricing Info -->
-          <div class="bg-club-navy-50 p-8 rounded-lg">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">
-              Session Information
-            </h3>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center">
-                <span class="font-semibold">Duration Guide:</span>
-                <span>{simulatorInfo.data.pricing.duration_guide}</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="font-semibold">Max Players:</span>
-                <span
-                  >{simulatorInfo.data.pricing.max_players} per simulator</span
-                >
-              </div>
-              <div class="pt-4 border-t">
-                <p class="text-sm text-gray-600">
-                  {simulatorInfo.data.pricing.booking_info}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Facilities -->
-          <div class="bg-gray-50 p-8 rounded-lg">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">
-              Facilities Available
-            </h3>
-            <div class="space-y-3">
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🅿️</span>
-                <span
-                  >Free Parking: {
-                    simulatorInfo.data.facilities.parking ? "Yes" : "No"
-                  }</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🚿</span>
-                <span
-                  >Changing Rooms: {
-                    simulatorInfo.data.facilities.changing_rooms
-                      ? "Available"
-                      : "Not Available"
-                  }</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🚻</span>
-                <span
-                  >Toilets: {
-                    simulatorInfo.data.facilities.toilets
-                      ? "Available"
-                      : "Not Available"
-                  }</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🍺</span>
-                <span
-                  >Bar: {simulatorInfo.data.facilities.bar_distance} away</span
-                >
-              </div>
-              <div class="flex items-center">
-                <span class="text-club-gold-600 mr-3">🍽️</span>
-                <span
-                  >Food: {
-                    simulatorInfo.data.facilities.food_available
-                      ? "Available (based on opening hours)"
-                      : "Not Available"
-                  }</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </div>
 </Layout>

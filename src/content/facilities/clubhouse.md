@@ -6,8 +6,6 @@ capacity: 120
 tags: ["facilities", "clubhouse", "dining", "events"]
 ---
 
-## Overview
-
 The well-developed clubhouse at Heaton Moor Golf Club serves as the social heart of the club, offering comprehensive facilities for members, visitors, and event guests.
 
 ## Dining & Bar
